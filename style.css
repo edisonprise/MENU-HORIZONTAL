@@ -1,0 +1,113 @@
+/*aqui se esta poniendo todo el contenido en el borde de la pagina*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.collapsed {
+  display: none;
+}
+
+/*navegador */
+nav {
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
+/* navegador version movil*/
+nav .mobile {
+  display: none;
+}
+
+nav .mobile .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
+
+nav .mobile .header .more button {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+}
+/* logo */
+nav .logo {
+  min-width: 250px;
+}
+
+/* block agarra todo el ancho de la pantalla*/
+nav a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 20px 25px;
+}
+
+nav a:hover {
+  color: black;
+  background-color: #00c3ff;
+}
+
+/*space-between sale el menu dividido y se expande por toda la pantalla */
+/* justify-content nos alinea de forma horizontal*/
+/* align-items nos alinea al centro de forma vertical*/
+nav .desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pad: 0 20px;
+}
+
+nav .desktop .primary,
+nav .desktop .secondary {
+  display: flex;
+}
+
+/*cuando se ponen juntas las clases es por que el elemento tiene las 2 clases*/
+nav .desktop .secondary.mini {
+  display: none;
+}
+
+@media screen and (max-width: 853px) {
+  nav .logo {
+    min-width: 100px;
+  }
+
+  nav .secondary.full {
+    display: none;
+  }
+
+  nav .secondary.mini {
+    display: block !important;
+  }
+
+  nav .secondary.mini .submenu {
+    background-color: black;
+    position: absolute;
+    display: none;
+    width: 200px;
+    right: 0;
+  }
+
+  nav .secondary.mini:hover .submenu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  nav .desktop {
+    display: none;
+  }
+  nav .mobile {
+    display: block;
+  }
+}
